@@ -37,28 +37,28 @@ public final class Swerve extends GRRSubsystem {
         .setLocation(0.31115, 0.31115)
         .setMoveMotor(SwerveMotors.sparkMax(RobotMap.kFlMove,MotorType.kBrushless, true))
         .setTurnMotor(SwerveMotors.sparkMax(RobotMap.kFlTurn,MotorType.kBrushless, true))
-        .setEncoder(SwerveEncoders.canCoder(RobotMap.kFlEncoder, 110.947403125, true));
+        .setEncoder(SwerveEncoders.canCoder(RobotMap.kFlEncoder, 110.947403125, false));
 
     private static final SwerveModuleConfig kFrontRight = new SwerveModuleConfig()
         .setName("frontRight")
         .setLocation(0.31115, -0.31115)
         .setMoveMotor(SwerveMotors.sparkMax(RobotMap.kFrMove,MotorType.kBrushless, true))
         .setTurnMotor(SwerveMotors.sparkMax(RobotMap.kFrTurn,MotorType.kBrushless, true))
-        .setEncoder(SwerveEncoders.canCoder(RobotMap.kFrEncoder, 37.354, true));
+        .setEncoder(SwerveEncoders.canCoder(RobotMap.kFrEncoder, 37.354, false));
 
     private static final SwerveModuleConfig kBackLeft = new SwerveModuleConfig()
         .setName("backLeft")
         .setLocation(-0.31115, 0.31115)
-        .setMoveMotor(SwerveMotors.sparkMax(RobotMap.kBlMove,MotorType.kBrushless, true))
+        .setMoveMotor(SwerveMotors.sparkMax(RobotMap.kBlMove,MotorType.kBrushless, false))
         .setTurnMotor(SwerveMotors.sparkMax(RobotMap.kBlTurn,MotorType.kBrushless, true))
-        .setEncoder(SwerveEncoders.canCoder(RobotMap.kBlEncoder, 53.685, true));
+        .setEncoder(SwerveEncoders.canCoder(RobotMap.kBlEncoder, 53.685, false));
 
     private static final SwerveModuleConfig kBackRight = new SwerveModuleConfig()
         .setName("backRight")
         .setLocation(-0.31115, -0.31115)
         .setMoveMotor(SwerveMotors.sparkMax(RobotMap.kBrMove,MotorType.kBrushless, true))
         .setTurnMotor(SwerveMotors.sparkMax(RobotMap.kBrTurn,MotorType.kBrushless, true))
-        .setEncoder(SwerveEncoders.canCoder(RobotMap.kBrEncoder, 256.5, true));
+        .setEncoder(SwerveEncoders.canCoder(RobotMap.kBrEncoder, 256.5, false));
 
     private static final SwerveConfig kConfig = new SwerveConfig()
         .setTimings(TimedRobot.kDefaultPeriod, 0.004, 0.02)
