@@ -4,7 +4,7 @@ import static edu.wpi.first.wpilibj2.command.Commands.*;
 
 import com.ctre.phoenix6.SignalLogger;
 
-// import edu.wpi.first.epilogue.Epilogue;
+import edu.wpi.first.epilogue.Epilogue;
 import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.wpilibj.DataLogManager;
 import edu.wpi.first.wpilibj.DriverStation;
@@ -37,7 +37,7 @@ public final class Robot extends TimedRobot {
         DataLogManager.start();
         DriverStation.startDataLog(DataLogManager.getLog());
         SignalLogger.enableAutoLogging(false);
-        // Epilogue.getConfig().root = "/Telemetry";
+        Epilogue.getConfig().root = "/Telemetry";
 
         // Initialize subsystems
         swerve = new Swerve();

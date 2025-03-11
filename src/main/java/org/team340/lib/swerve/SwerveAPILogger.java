@@ -1,7 +1,7 @@
 package org.team340.lib.swerve;
 
 import edu.wpi.first.epilogue.CustomLoggerFor;
-// import edu.wpi.first.epilogue.Epilogue;
+import edu.wpi.first.epilogue.Epilogue;
 import edu.wpi.first.epilogue.logging.ClassSpecificLogger;
 import edu.wpi.first.epilogue.logging.EpilogueBackend;
 import edu.wpi.first.math.geometry.Pose2d;
@@ -21,14 +21,14 @@ public class SwerveAPILogger extends ClassSpecificLogger<SwerveAPI> {
     public void update(EpilogueBackend backend, SwerveAPI api) {
         logState(backend.getNested("state"), api.state);
 
-        // var errorHandler = Epilogue.getConfig().errorHandler;
-        // api.imu.log(backend.getNested("imu"), errorHandler);
-        // for (var m : api.modules) {
-        //     var module = backend.getNested(m.getName());
-        //     m.moveMotor.log(module.getNested("moveMotor"), errorHandler);
-        //     m.turnMotor.log(module.getNested("turnMotor"), errorHandler);
-        //     m.encoder.log(module.getNested("encoder"), errorHandler);
-        // }
+        var errorHandler = Epilogue.getConfig().errorHandler;
+        api.imu.log(backend.getNested("imu"), errorHandler);
+        for (var m : api.modules) {
+            var module = backend.getNested(m.getName());
+            m.moveMotor.log(module.getNested("moveMotor"), errorHandler);
+            m.turnMotor.log(module.getNested("turnMotor"), errorHandler);
+            m.encoder.log(module.getNested("encoder"), errorHandler);
+        }
     }
 
     private void logState(EpilogueBackend backend, SwerveState state) {
